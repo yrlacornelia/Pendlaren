@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+<main>
+    <form>
+        <label for="travel-from">travel from</label><br>
+        <input type="text" id="travel-from" name="travel-from"><br>
+        <label for="travel-to">travel to</label><br>
+        <input type="text" id="travel-to" name="travel-to" ><br><br>
+        <button onclick="inputBtn()" id="search-btn" type="button"> search travel </button>
+      </form> 
+    <div id="hi"></div>
+
+    <button id="buttontest"></button>
+<section id="search-container">
+    <button id="position-button">hållplatser nära mig</button>
+ </section>
+ <div id="stops-container">  
+     <ul id="near-me-container"></ul>
+    <div id="near-info"></div>
+</div>
+      </main>
+      <script type='text/javascript' src='config.js'></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

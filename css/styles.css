@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 1rem;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#search-container{
+    border: 1px solid green;
+    width: 60%;
+ height: 40vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+#position-button {
+    font-size: 16px;
+}
+#stops-container {
+    width: 60%;
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#near-me{
+    border: 1px solid green;
+    background-color: aqua;
+
+}
+form{
+    display: flex;
+}
