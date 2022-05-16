@@ -1,0 +1,104 @@
+
+
+buttontest.addEventListener(`click`, (event) => {
+  test();
+});
+
+async function test() {
+  const response = await fetch(
+    `https://api.resrobot.se/v2.1/trip?format=json&originId=740000001&destId=740000003&passlist=true&showPassingPoints=true&accessId=${mykey}`
+  );
+  const data = await response.json();
+  const trip = data.Trip;
+  destElem(trip);
+}
+function destElem(trip) {
+  const destObj = trip.map((item) => {
+    return { destination: item.Destination.name, origin: item.Origin.name };
+  });
+  console.log(destObj);
+
+  hi.innerHTML += `<li> ${destObj[2].destination + destObj[2].origin}  </li>`;
+}
+
+
+
+
+
+
+
+btn oncklick pass id v
+samma med andra id 
+
+när båda id e knäcka 
+click på och console logga 
+
+input Göteborg 
+
+
+
+
+
+
+const buttontest = document.querySelector(`#buttontest`);
+const hi = document.querySelector(`#hi`);
+const inputElemFrom = document.querySelector(`#travel-from`)
+const inputElemto = document.querySelector(`#travel-to`)
+const suggestionsContainer = document.querySelector(`#travel-suggestions`)
+const input = document.querySelector('#travel-from');
+const log = document.getElementById('values');
+
+input.addEventListener('input', updateValue);
+
+// log.textContent = e.target.value;
+
+function updateValue(e) {
+ word = e.target.value;
+  testConsole(word)
+}
+
+// const inputBtn = (e) => {
+//     const word = inputElemFrom.value;
+//    testConsole(word)
+//  }
+async function testConsole(word) {
+    const response = await fetch(
+      `https://api.resrobot.se/v2.1/location.name?input=${word}&format=json&accessId=${mykey}`
+    );
+    const data = await response.json();
+    suggestionArray = data.stopLocationOrCoordLocation
+   
+travelSuggestion(suggestionArray)
+  }
+
+
+  function travelSuggestion(suggestionArray) {
+    const suggObj = suggestionArray.map((item) => {
+      return { myname: item.StopLocation.name, id: item.StopLocation.extId};
+    });
+    renderSuggestions(suggObj)
+  }
+
+
+  function renderSuggestions(suggObj) {
+    const famous = suggObj.map((item) => {
+      console.log(item)
+      return `<div id="nd"  onclick=tyBtn(${item.id})> ${item.myname} </div>`;
+    })
+    .join("");
+  suggestionsContainer.innerHTML = famous;
+ 
+  }
+
+  function tyBtn(id) {
+    console.log(id)
+ 
+  }
+
+  
+
+
+  fetch name by id render name in there
+   same with other 
+   button search 
+   console . log both id 

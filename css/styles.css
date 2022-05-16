@@ -15,7 +15,6 @@ main{
     align-items: center;
 }
 #search-container{
-    border: 1px solid green;
     width: 60%;
  height: 40vh;
  display: flex;
@@ -40,4 +39,7 @@ align-items: center;
 }
 form{
     display: flex;
+}
+#travel-suggestions{
+    border: 1px solid green;
 }
