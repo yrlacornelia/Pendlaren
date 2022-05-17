@@ -22,6 +22,12 @@ function destElem(trip) {
 }
 
 
+stylea den andra 
+dropdown bättre
+
+
+
+
 
 
 
@@ -101,4 +107,4 @@ travelSuggestion(suggestionArray)
   fetch name by id render name in there
    same with other 
    button search 
-   console . log both id 
+   console .

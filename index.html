@@ -14,22 +14,34 @@
   </head>
   <body>
     <main>
-      <p id="values"></p>
+      <h1>Pendlaren</h1>
+      <section id="forms">
       <form>
-        <label for="travel-from">travel from</label><br />
-        <input type="text" id="travel-from" name="travel-from" /><br />
-        <label for="travel-to">travel to</label><br />
-        <input type="text" id="travel-to" name="travel-to" /><br /><br />
-        <button onclick="inputBtn()" id="search-btn" type="button">
-          search travel
-        </button>
+        <label for="travel-from">Från</label>
+        <input autocomplete="off" type="text" id="travel-from" name="travel-from" />
+        <div id="travel-suggestions-from"></div>
       </form>
-      <ul id="travel-suggestions-to"></ul>
-      <ul id="travel-suggestions-from"></ul>
 
+      <form>
+        <label for="travel-to">Till</label>
+        <input autocomplete="off" type="text" id="travel-to" name="travel-to" />
+        <div id="travel-suggestions-to"></div>
+      </form>
+    
+     </section> 
+      <a class="search-btn" onclick="inputBtn()" >
+        <span class="top-key"></span>
+        <span class="text">Sök resa</span>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
+      </a>
+      <div id="search-output"></div>
       <section id="search-container">
-        <button id="position-button">hållplatser nära mig</button>
-      </section>
+      <h3>Hitta hållplatser nära dig</h3>
+        <button id="position-button">sök   <span></span></button>
+        
+    </section>
+     
       <div id="stops-container">
         <ul id="near-me-container"></ul>
         <div id="near-info"></div>

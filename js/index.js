@@ -76,6 +76,7 @@ const inputFrom = document.querySelector('#travel-from');
 const log = document.getElementById('values');
 inputFrom.addEventListener('input', updateValueFrom);
 inputTo.addEventListener('input', updateValueTo);
+const searchOutput = document.querySelector(`#search-output`)
 let testarrayto =[]
 let testarrayfrom =[]
 
@@ -129,7 +130,7 @@ travelSuggestionFrom(suggestionArray)
   function renderSuggestionsTo(suggObj) {
     const chooseSug = suggObj.map((item) => {
       console.log(item)
-      return `<div id="nd"  onclick=tyBtnTo(${item.id})> ${item.myname} </div>`;
+      return `<div class="nd"  onclick=tyBtnTo(${item.id})> ${item.myname} </div>`;
     })
     .join("");
   suggestionsContainerTo.innerHTML = chooseSug;
@@ -138,7 +139,7 @@ travelSuggestionFrom(suggestionArray)
   function renderSuggestionsFrom(suggObj) {
     const chooseSug = suggObj.map((item) => {
       console.log(item)
-      return `<div id="nd"  onclick=tyBtnFrom(${item.id})> ${item.myname} </div>`;
+      return `<div class="nd"  onclick=tyBtnFrom(${item.id})> ${item.myname} </div>`;
     })
     .join("");
   suggestionsContainerFrom.innerHTML = chooseSug;
@@ -199,5 +200,15 @@ async function loelo(idTo, idFrom) {
     `https://api.resrobot.se/v2.1/trip?format=json&originId=${idFrom}&destId=${idTo}&passlist=true&showPassingPoints=true&accessId=${mykey}`
   );
   const data = await response.json();
-  console.log(data)
+  const trip = data.Trip
+
+destElem(trip);
+}
+function destElem(trip) {
+  const destObj = trip.map((item) => {
+  return { destination: item.Destination.name, origin: item.Origin.name };
+});
+console.log(destObj);
+
+searchOutput.innerHTML += `<li> ${destObj[2].destination + " - " +  destObj[2].origin}  </li>`;
 }
